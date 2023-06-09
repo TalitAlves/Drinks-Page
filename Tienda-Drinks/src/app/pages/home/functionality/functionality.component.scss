@@ -1,0 +1,40 @@
+ .container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+
+ }
+
+ h4{
+    text-align: center;
+    color:#4D4D4D;
+    font-weight: 900;
+ }
+    .box-info{
+    max-width: 300px;
+    height: 195px;
+    border: 2px solid #B46060;
+    border-radius: 5px;
+    padding: 10px;
+    background-color:#FFF4E0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+    h4{
+        text-align: center;
+        margin: 10px 0;
+    }
+
+  
+    p{
+        font-size: 15px;
+        color:#4D4D4D
+       
+    }
+
+    img{
+        width: 50px;
+        display: block;
+        margin: 0 auto
+    };
