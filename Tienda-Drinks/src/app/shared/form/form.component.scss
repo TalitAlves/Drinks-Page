@@ -1,7 +1,68 @@
 
-form{
-    margin-left: 30px;
+.container{
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+    &::after{
+       content:" ";
+       position:absolute;
+       top: 0;
+       left: 0;
+       bottom: 0;
+       right: 0;
+       background-image: url("/assets/drinksBG2.jpg") ;
+      
+       opacity: 0.8;
+        background-size: 100%;
+        background-repeat: no-repeat;
+         z-index: -1; 
+         height: 100%;
+         width: 100%;
+         filter:brightness(0.6)
+    }
+    
 }
+
+form{
+    align-items: flex-end;
+    background-color:#ECF8F9 ;
+    padding: 50px;
+    width: 300px;
+
+    .form-btn{
+        margin-top: 20px;
+    }
+    
+    
+}
+
+.text{
+
+    max-width: 600px;
+    flex-grow: 2;
+  
+    margin-right: 40px;
+    display: block;
+    margin: 0 auto;
+    
+    
+    
+    h2{
+        color: rgb(255, 254, 254);
+        font-size: 65px;
+        font-weight: 900;
+
+    }
+    
+}
+
+
+
 .name{
     display: block;
 }

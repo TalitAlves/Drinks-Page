@@ -1,22 +1,44 @@
+<div class="container"> 
+
+    <div class="text">
+        <h2>Mix the ingredients and whip up a fabulous drink!</h2>
+    </div>
+
 <form
-[formGroup]="form"
+
+*ngIf="formDrink"
+[formGroup]="formDrink"
+(submit)="creatDrink()"
+
+
+
 >
     <label class="name">Drink name:</label>
-    <input type="text" formControlName="name">
+    <input type="text" formControlName="strDrink">
     <h4>Ingredients</h4>
-    <label class="name" for="">Ingredients</label>
-    <input type="text" name="" id="" class="ingredients">
-    <input type="text" name="" id="" class="ingredients">
-    <input type="text" name="" id="" class="ingredients">
-    <input type="text" name="" id="" class="ingredients">
-    <input type="text" name="" id="" class="ingredients">
+    <label class="ingredients" for="">Ingredients</label>
+    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient1">
+    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient2">
+    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient3">
+    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient4">
+    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient5">
     <h4>Alcoholic</h4>
     <div class="checkbox-container"> 
     <label for="" class="checkbox">Si</label>
     <input type="checkbox" name="" id="" class="checkbox-input">
     <label for="" class="checkbox">No</label>
     <input type="checkbox" name="" id="" class="checkbox-input">
-</div>
+
    
+</div>
+<button class="primary-btn form-btn">Creat</button>
 
 </form>
+
+
+<div *ngFor="let drink of newDrinks">
+    {{drink.strDrink}}
+   
+</div>
+
+</div>
