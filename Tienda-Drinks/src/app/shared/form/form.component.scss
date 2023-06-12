@@ -1,0 +1,31 @@
+
+form{
+    margin-left: 30px;
+}
+.name{
+    display: block;
+}
+
+.ingredients{
+    display: block;
+    margin-bottom: 10px;
+}
+.checkbox-container{
+border: 1px solid grey;
+max-width: 185px;
+padding: 10px;
+border-radius: 2px;
+
+    .checkbox{
+        margin-left: 10px;
+    }
+
+    .checkbox-input{
+        margin-left: 5px;
+    }
+     
+}
+
+h4{
+    margin-top: 10px;
+}

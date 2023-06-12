@@ -1,0 +1,13 @@
+<div class="header">
+  <h1>Find your favorite Drink!</h1>
+</div>
+<input
+  type="text"
+  placeholder="Search for a drink"
+  [(ngModel)]="drinkName"
+  (ngModelChange)="getDrinks()"
+/>
+
+<div class="drinks">
+  <app-card *ngFor="let drink of drinks" [drink]="drink"></app-card>
+</div>

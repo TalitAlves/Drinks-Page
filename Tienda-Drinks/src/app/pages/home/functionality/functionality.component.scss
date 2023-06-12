@@ -1,3 +1,5 @@
+
+
  .container {
     display: flex;
     gap: 20px;
@@ -8,33 +10,43 @@
 
  h4{
     text-align: center;
-    color:#4D4D4D;
     font-weight: 900;
+    color: white
  }
-    .box-info{
+   
+ 
+ .box-info{
     max-width: 300px;
-    height: 195px;
-    border: 2px solid #B46060;
+    height: 320px;
     border-radius: 5px;
     padding: 10px;
-    background-color:#FFF4E0;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+ }
+
+     .box-finder{
+        background-color: #A4579F;
+     
     }
 
-    h4{
-        text-align: center;
-        margin: 10px 0;
+    .box-drinks{
+        background-color: #99C7A2;
     }
 
+    .box-favorites{
+        background-color: #99957D;
+    }
+
+ 
+   
   
     p{
         font-size: 15px;
-        color:#4D4D4D
+        color: white
        
     }
 
     img{
-        width: 50px;
+        width: 150px;
         display: block;
         margin: 0 auto
     };

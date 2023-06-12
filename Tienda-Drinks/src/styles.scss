@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/general/general.scss";
+@import "./styles/general/components.scss";
+
+
+body{
+    margin: 0 10px;
+    font-family: $font-stack;
+}
