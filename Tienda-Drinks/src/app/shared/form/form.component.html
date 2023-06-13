@@ -1,44 +1,135 @@
-<div class="container"> 
+<div class="container">
+  
+  <form *ngIf="formDrink" [formGroup]="formDrink" (submit)="creatDrink()">
+    <label class="label">Id:</label>
+    <input type="number" formControlName="id" placeholder="Set an ID number" />
+    <p class="error"
+      *ngIf="
+        !formDrink.get('id')?.valid &&
+        (formDrink.get('id')?.dirty || formDrink.get('id')?.touched)
+      "
+    >ID is Required</p>
 
-    <div class="text">
-        <h2>Mix the ingredients and whip up a fabulous drink!</h2>
+
+
+    <label class="label">Drink name:</label>
+    <input type="text" formControlName="strDrink" placeholder="Set name" />
+    <p class="error"
+      *ngIf="
+        !formDrink.get('strDrink')?.valid &&
+        (formDrink.get('strDrink')?.dirty || formDrink.get('strDrink')?.touched)
+      "
+    >Drink name Required</p>
+
+    <label class="label" for="">Ingredients</label>
+    <div class="ingredients">
+      <input
+        type="text"
+        name=""
+        id=""
+        class="ingredients"
+        formControlName="strIngredient1"
+        placeholder="Ingredient 1"
+      />
+      <p class="error"
+      *ngIf="
+        !formDrink.get('strIngredient1')?.valid &&
+        (formDrink.get('strIngredient1')?.dirty || formDrink.get('strIngredient1')?.touched)
+      "
+    >at least 2 ingredients required</p>
+      <input
+        type="text"
+        name=""
+        id=""
+        class="ingredients"
+        formControlName="strIngredient2"
+        placeholder="Ingredient 2"
+      />
+      <p class="error"
+      *ngIf="
+        !formDrink.get('strIngredient2')?.valid &&
+        (formDrink.get('strIngredient2')?.dirty || formDrink.get('strIngredient2')?.touched)
+      "
+    > at least 2 ingredients required</p>
+      <input
+        type="text"
+        name=""
+        id=""
+        class="ingredients"
+        formControlName="strIngredient3"
+        placeholder="Ingredient 3"
+      />
+      <input
+        type="text"
+        name=""
+        id=""
+        class="ingredients"
+        formControlName="strIngredient4"
+        placeholder="Ingredient 4"
+      />
+      <input
+        type="text"
+        name=""
+        id=""
+        class="ingredients"
+        formControlName="strIngredient5"
+        placeholder="Ingredient 5"
+      />
+      <input
+        type="text"
+        name=""
+        id=""
+        class="ingredients"
+        formControlName="strIngredient6"
+        placeholder="Ingredient 6"
+      />
     </div>
 
-<form
+    <label class="label" for="">Instructions</label>
+    <textarea
+      name=""
+      id=""
+      cols="30"
+      rows="5"
+      placeholder="Set the instructions"
+    ></textarea>
 
-*ngIf="formDrink"
-[formGroup]="formDrink"
-(submit)="creatDrink()"
-
-
-
->
-    <label class="name">Drink name:</label>
-    <input type="text" formControlName="strDrink">
-    <h4>Ingredients</h4>
-    <label class="ingredients" for="">Ingredients</label>
-    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient1">
-    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient2">
-    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient3">
-    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient4">
-    <input type="text" name="" id="" class="ingredients" formControlName="strIngredient5">
     <h4>Alcoholic</h4>
-    <div class="checkbox-container"> 
-    <label for="" class="checkbox">Si</label>
-    <input type="checkbox" name="" id="" class="checkbox-input">
-    <label for="" class="checkbox">No</label>
-    <input type="checkbox" name="" id="" class="checkbox-input">
+    <div class="checkbox-container">
+      <label class="checkbox">Si</label>
+      <input
+        type="checkbox"
+        class="checkbox-input"
+        [(ngModel)]="isChecked1"
+        (change)="toggleCheckbox(1)"
+        formControlName="strAlcoholic"
+      />
 
-   
-</div>
-<button class="primary-btn form-btn">Creat</button>
+      <label for="" class="checkbox">No</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        class="checkbox-input"
+        [(ngModel)]="isChecked2"
+        (change)="toggleCheckbox(2)"
+        formControlName="strAlcoholic"
+      />
+    </div>
+    <p class="error"
+      *ngIf="
+        !formDrink.get('strAlcoholic')?.valid &&
+        (formDrink.get('strAlcoholic')?.dirty || formDrink.get('strAlcoholic')?.touched)
+      "
+    >Choose an option</p>
+    <button class="primary-btn form-btn">Creat</button>
+  </form>
 
-</form>
+  <!-- <div *ngFor="let drink of newDrinks">
+    {{ drink.strDrink }}
+  </div>
 
-
-<div *ngFor="let drink of newDrinks">
-    {{drink.strDrink}}
-   
-</div>
-
-</div>
+  <div class="text">
+    <h2>Mix the ingredients and whip up a fabulous drink!</h2>
+  </div>
+</div> -->

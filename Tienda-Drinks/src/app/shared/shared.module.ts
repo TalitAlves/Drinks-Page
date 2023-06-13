@@ -15,6 +15,7 @@ import { NewDrinkComponent } from '../pages/new-drink/new-drink.component';
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
+    FormsModule,
   ],
   exports:[
     FormComponent,

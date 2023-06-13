@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListModule } from 'src/app/pages/list/list.module';
 import { NewDrinkModule } from 'src/app/pages/new-drink/new-drink.module';
+import { MyDrinksModule } from 'src/app/pages/my-drinks/my-drinks.module';
 
 
 const routes: Routes = [{
@@ -24,6 +25,12 @@ const routes: Routes = [{
   path: "new-drink",
   pathMatch:'prefix',
   loadChildren:()=> import('src/app/pages/new-drink/new-drink.module').then(m=>NewDrinkModule)
+},
+
+{
+  path: "my-drinks",
+  pathMatch: 'prefix',
+  loadChildren:() => import('src/app/pages/my-drinks/my-drinks.module').then(m=>MyDrinksModule)
 }
 
 ];

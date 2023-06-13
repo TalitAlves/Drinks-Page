@@ -18,11 +18,12 @@ export class ListComponent implements OnInit {
     this.comunicatioService
       .getDrink(this.drinkName)
       .subscribe((apiResponse: ApiResponse) => {
+        console.log(apiResponse)
         this.drinks = apiResponse.drinks;
       });
   }
 
-  public ngOnInit(): void {
+  public ngOnInit(): void {  
     this.getDrinks();
   }
 }
