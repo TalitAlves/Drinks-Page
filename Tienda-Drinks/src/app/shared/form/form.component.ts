@@ -18,6 +18,7 @@ import { ComunicatorService } from 'src/app/core/comunicator.service';
 export class FormComponent implements OnInit {
   public formDrink?: FormGroup;
   public newDrink?:Drink;
+  
 
   constructor(
     private fb: FormBuilder,
@@ -35,11 +36,13 @@ export class FormComponent implements OnInit {
       strIngredient4: [this.newDrink?.strIngredient4, ],
       strIngredient5: [this.newDrink?.strIngredient5,],
       strIngredient6: [this.newDrink?.strIngredient6, ],
-      strAlcoholic: [this.newDrink?.strAlcoholic, [Validators.requiredTrue]]
+      strAlcoholic: [this.newDrink?.strAlcoholic, [Validators.requiredTrue]],
+      strInstructions:[this.newDrink?.strInstructions, [Validators.required, Validators.minLength(5)]],
+      
     });
 
     this.formDrink.valueChanges.subscribe((changes)=>{
-      this.newDrink = changes;
+      this.newDrink = changes; 
     })
   }
 

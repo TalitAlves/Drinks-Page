@@ -7,20 +7,20 @@ import { ComunicatorService } from 'src/app/core/comunicator.service';
   templateUrl: './new-drink.component.html',
   styleUrls: ['./new-drink.component.scss']
 })
-export class NewDrinkComponent  implements OnInit{
+export class NewDrinkComponent  {
 
   public drinkName: string = ''
 
 constructor(private comunicatorService:ComunicatorService){}
 
-public getDrinskDb(){
-  this.comunicatorService.getDrinkDb(this.drinkName).subscribe((apiresponse: ApiResponse)=>{
-    console.log(apiresponse)
-  })
-}
+// public getDrinskDb(){
+//   this.comunicatorService.getDrinkDb(this.drinkName).subscribe((apiresponse: ApiResponse)=>{
+//     console.log(apiresponse)
+//   })
+// }
 
-public ngOnInit(): void {
-  this.getDrinskDb()
-}
+// public ngOnInit(): void {
+//   this.getDrinskDb()
+// }
 
 }

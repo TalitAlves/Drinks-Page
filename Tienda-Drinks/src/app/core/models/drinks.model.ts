@@ -19,7 +19,7 @@ export interface ApiResponse {
     strInstructionsIT: string
     strInstructionsZHHANS: string 
     strInstructionsZHHANT: string 
-    strDrinkThumb: string
+    strDrinkThumb?: string
     strIngredient1: string
     strIngredient2: string
     strIngredient3: string

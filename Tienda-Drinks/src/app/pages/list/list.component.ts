@@ -18,8 +18,7 @@ export class ListComponent implements OnInit {
     this.comunicatioService
       .getDrink(this.drinkName)
       .subscribe((apiResponse: ApiResponse) => {
-        console.log(apiResponse)
-        this.drinks = apiResponse.drinks;
+         this.drinks = apiResponse.drinks;
       });
   }
 
