@@ -1,5 +1,5 @@
 import { Drink } from './../../core/models/drinks.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -15,10 +15,13 @@ import { ComunicatorService } from 'src/app/core/comunicator.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
   public formDrink?: FormGroup;
-  public newDrink?:Drink;
+  public newDrink?: Drink;
+  public previewImg:string = ''; 
   
+ @Input() public drink?: Drink
+ 
 
   constructor(
     private fb: FormBuilder,
@@ -28,22 +31,26 @@ export class FormComponent implements OnInit {
 
   public ngOnInit(): void {
     this.formDrink = this.fb.group({
-      id: [this.newDrink?.id, [Validators.required]], 
-      strDrink:[this.newDrink?.strDrink, [Validators.required]],
-      strIngredient1: [this.newDrink?.strIngredient1, [Validators.required],],
-      strIngredient2: [this.newDrink?.strIngredient2, [Validators.required],],
-      strIngredient3: [this.newDrink?.strIngredient3],
-      strIngredient4: [this.newDrink?.strIngredient4, ],
-      strIngredient5: [this.newDrink?.strIngredient5,],
-      strIngredient6: [this.newDrink?.strIngredient6, ],
-      strAlcoholic: [this.newDrink?.strAlcoholic, [Validators.requiredTrue]],
-      strInstructions:[this.newDrink?.strInstructions, [Validators.required, Validators.minLength(5)]],
-      
+      strDrink: [this.drink?.strDrink || this.newDrink?.strDrink, [Validators.required]],
+      strIngredient1: [this.drink?.strIngredient1 || this.drink?.strIngredient1 || this.newDrink?.strIngredient1, [Validators.required]],
+      strIngredient2: [this.drink?.strIngredient2,this.newDrink?.strIngredient2,this.newDrink?.strIngredient2,this.newDrink?.strIngredient2, [Validators.required]],
+      strIngredient3: [this.drink?.strIngredient3 || this.newDrink?.strIngredient3],
+      strIngredient4: [this.drink?.strIngredient4 || this.newDrink?.strIngredient4],
+      strIngredient5: [this.drink?.strIngredient5 || this.drink?.strIngredient3 || this.newDrink?.strIngredient5],
+      strIngredient6: [this.drink?.strIngredient6 ||this.newDrink?.strIngredient6],
+      strAlcoholic: [this.drink?.strAlcoholic||this.newDrink?.strAlcoholic, [Validators.requiredTrue]],
+      strInstructions: [ this.drink?.strInstructions ||
+        this.newDrink?.strInstructions,
+        [Validators.required, Validators.minLength(5)],
+      ],
+      strDrinkThumb: [this.drink?.strDrinkThumb || this.newDrink?.strDrinkThumb, ""]
     });
-
-    this.formDrink.valueChanges.subscribe((changes)=>{
-      this.newDrink = changes; 
+    this.previewImg = this.newDrink?.strDrinkThumb || '';
+    this.formDrink?.get('strDrinkThumb')?.valueChanges.subscribe((value)=>{
+      this.previewImg = value
     })
+
+  
   }
 
   public isChecked1: boolean = false;
@@ -52,17 +59,26 @@ export class FormComponent implements OnInit {
   toggleCheckbox(checkboxNumber: number) {
     if (checkboxNumber === 1) {
       this.isChecked2 = false;
+      console.log(`1 ${this.isChecked1}`)
     } else if (checkboxNumber === 2) {
       this.isChecked1 = false;
+      console.log(`2 ${this.isChecked2}`)
     }
   }
 
   public creatDrink() {
     if (this.formDrink?.valid) {
-     this.comunicatorService.creatDrink(this.formDrink.value)
-     .subscribe()
-        this.formDrink.reset();
-        this.router.navigateByUrl('my-drinks')
+      const drinkEdit = this.drink 
+      ? this.comunicatorService.editDrink(this.drink.id, this.formDrink.value) :
+      this.comunicatorService.creatDrink(this.formDrink.value);
+        drinkEdit.subscribe((newDrink: Drink) => {
+          this.router.navigateByUrl('my-drinks');
+        });
+      this.formDrink?.reset();
+
     }
   }
+
+
+  
 }

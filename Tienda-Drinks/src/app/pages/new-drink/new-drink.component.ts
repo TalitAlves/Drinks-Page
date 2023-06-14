@@ -1,6 +1,6 @@
-import { ApiResponse } from './../../core/models/drinks.model';
-import { Component, OnInit } from '@angular/core';
-import { ComunicatorService } from 'src/app/core/comunicator.service';
+
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-new-drink',
@@ -9,18 +9,7 @@ import { ComunicatorService } from 'src/app/core/comunicator.service';
 })
 export class NewDrinkComponent  {
 
-  public drinkName: string = ''
+ 
 
-constructor(private comunicatorService:ComunicatorService){}
-
-// public getDrinskDb(){
-//   this.comunicatorService.getDrinkDb(this.drinkName).subscribe((apiresponse: ApiResponse)=>{
-//     console.log(apiresponse)
-//   })
-// }
-
-// public ngOnInit(): void {
-//   this.getDrinskDb()
-// }
 
 }

@@ -1,20 +1,19 @@
-import { MyDrinksRoutingModule } from './my-drinks-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyDrinksComponent } from './my-drinks.component';
+
+import { EditDrinkRoutingModule } from './edit-drink-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { EditDrinkComponent } from './edit-drink.component';
 
 
 @NgModule({
   declarations: [
-    MyDrinksComponent
+    EditDrinkComponent
   ],
   imports: [
     CommonModule,
+    EditDrinkRoutingModule,
     SharedModule,
-    MyDrinksRoutingModule,
-  
-  ] ,
-
+  ]
 })
-export class MyDrinksModule { }
+export class EditDrinkModule { }

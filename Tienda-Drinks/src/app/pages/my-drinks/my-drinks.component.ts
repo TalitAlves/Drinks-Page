@@ -13,16 +13,26 @@ export class MyDrinksComponent implements OnInit {
   constructor(private comunicatorService:ComunicatorService) {}
 
   public drinks: Drink[] = [];
+  public basicImage:string = "assets/cocktail_time.jpg"
 
   
   public getDrinkDb() {
     this.comunicatorService
       .getDrinkDb()
-      .subscribe((apiResponse: ApiResponse) => {
-        this.drinks = apiResponse.drinks
-        console.log(this.drinks)
+      .subscribe((drink:Drink[]) => {
+          this.drinks = drink
+       
       });
   }
+
+  public deleteDrink(drink:Drink){
+    
+    this.comunicatorService.deleteDrink(drink.id).subscribe(()=>{
+      this.getDrinkDb()
+    })
+   
+  }
+
 
   public ngOnInit(): void {
     this.getDrinkDb();

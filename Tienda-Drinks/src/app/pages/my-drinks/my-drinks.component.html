@@ -1,11 +1,19 @@
-<div *ngIf="drinks">
-   <div *ngFor="let drink of drinks" class="drinks">
-      <div class="drink-container"> 
-         <!-- <img [src]="drink.strDrinkThumb" alt="{{drink.strDrink}}">  -->
-         <h4>{{drink.strDrink}}</h4>
-         <p class="type">{{drink.strAlcoholic ? "Alcoholic" : "Non alcoholic"}}</p>       
-       </div>
+<div *ngIf="drinks" class="container">
    
+   <div *ngFor="let drink of drinks" class="drinks">
+      <div class="drink-info"> 
+         <div class="container-img">
+         <img src="{{drink.strDrinkThumb ? drink.strDrinkThumb : basicImage }}" alt="{{drink.strDrink}}"> 
+      </div>
+         <h4>{{drink.strDrink}}</h4>
+         <p class="type">{{drink.strAlcoholic ? "Alcoholic" : "Non alcoholic"}}</p>  
+         
+         <div class= "container-btn"> 
+         <button (click)="deleteDrink(drink)" class="primary-btn">Delete</button>
+         <button class="primary-btn"><a [routerLink] = "['../edit-drink', drink.id]">Edit</a>    </button>  
+       </div>
+      </div>
+      
        <div class="details">
     <h4>Ingredients:</h4>
       <ul>
@@ -18,9 +26,13 @@
       </ul>
       <h4>Instructions</h4>
       <p>{{drink.strInstructions}}</p>
+
+     
    
    </div>
+
    </div>
+ 
 
 </div>
 

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListModule } from 'src/app/pages/list/list.module';
 import { NewDrinkModule } from 'src/app/pages/new-drink/new-drink.module';
 import { MyDrinksModule } from 'src/app/pages/my-drinks/my-drinks.module';
+import { EditDrinkModule } from 'src/app/pages/edit-drink/edit-drink.module';
 
 
 const routes: Routes = [{
@@ -31,6 +32,11 @@ const routes: Routes = [{
   path: "my-drinks",
   pathMatch: 'prefix',
   loadChildren:() => import('src/app/pages/my-drinks/my-drinks.module').then(m=>MyDrinksModule)
+},
+{
+  path:'edit-drink/:id',
+  pathMatch: 'prefix',
+  loadChildren:()=> import('src/app/pages/edit-drink/edit-drink.module').then(m=>EditDrinkModule)
 }
 
 ];
