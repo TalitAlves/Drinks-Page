@@ -3,9 +3,8 @@ import { Component, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
-  FormControl,
   Validators,
-  FormsModule,
+
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ComunicatorService } from 'src/app/core/comunicator.service';
@@ -38,7 +37,7 @@ export class FormComponent {
       strIngredient4: [this.drink?.strIngredient4 || this.newDrink?.strIngredient4],
       strIngredient5: [this.drink?.strIngredient5 || this.drink?.strIngredient3 || this.newDrink?.strIngredient5],
       strIngredient6: [this.drink?.strIngredient6 ||this.newDrink?.strIngredient6],
-      strAlcoholic: [this.drink?.strAlcoholic||this.newDrink?.strAlcoholic, [Validators.requiredTrue]],
+      strAlcoholic: [this.drink?.strAlcoholic||this.newDrink?.strAlcoholic],
       strInstructions: [ this.drink?.strInstructions ||
         this.newDrink?.strInstructions,
         [Validators.required, Validators.minLength(5)],
@@ -53,18 +52,18 @@ export class FormComponent {
   
   }
 
-  public isChecked1: boolean = false;
-  public isChecked2: boolean = false;
+  // public isChecked1: boolean = false;
+  // public isChecked2: boolean = false;
 
-  toggleCheckbox(checkboxNumber: number) {
-    if (checkboxNumber === 1) {
-      this.isChecked2 = false;
-      console.log(`1 ${this.isChecked1}`)
-    } else if (checkboxNumber === 2) {
-      this.isChecked1 = false;
-      console.log(`2 ${this.isChecked2}`)
-    }
-  }
+  // toggleCheckbox(checkboxNumber: number) {
+  //   if (checkboxNumber === 1) {
+  //     this.isChecked2 = false;
+  //     console.log(`1 ${this.isChecked1}`)
+  //   } else if (checkboxNumber === 2) {
+  //     this.isChecked1 = false;
+  //     console.log(`2 ${this.isChecked2}`)
+  //   }
+  // }
 
   public creatDrink() {
     if (this.formDrink?.valid) {

@@ -1,4 +1,3 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Drink, ApiResponse } from './../../core/models/drinks.model';
 import { Component, OnInit } from '@angular/core';
 import { ComunicatorService } from 'src/app/core/comunicator.service';

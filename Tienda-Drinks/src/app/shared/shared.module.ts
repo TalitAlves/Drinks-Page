@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormComponent } from './form/form.component';
 import { RouterModule } from '@angular/router';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
   declarations: [
     FormComponent,
-    
-    
+    CardComponent,
+        
   ],
   imports: [
     CommonModule,
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports:[
     FormComponent,
+    CardComponent,
       
   ]
 })

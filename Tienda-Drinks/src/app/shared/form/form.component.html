@@ -107,25 +107,23 @@
     </p>
 
    
-    <div class="checkbox-container">
+    <div class="radio-container">
       <label class="label">Alcoholic?</label>
       <input
-        type="checkbox"
-        class="checkbox-input"
-        [(ngModel)]="isChecked1"
-        (change)="toggleCheckbox(1)"
+        type="radio"
+        class="radio-input"
+        value="Alcoholic"
         formControlName="strAlcoholic"
       />
-      <label class="checkbox yes">Yes</label>
+      <label class="radio" for="Alcoholic">Alcoholic</label>
 
       <input
-        type="checkbox"
-        class="checkbox-input"
-        [(ngModel)]="isChecked2"
-        (change)="toggleCheckbox(2)"
+        type="radio"
+        class="radio-input"
         formControlName="strAlcoholic"
+        value="NoAlcoholic"
       />
-      <label for="" class="checkbox">No</label>
+      <label for="" class="radio" for="NoAlcoholic">No Alcoholic</label>
     </div>
     <p
       class="error"

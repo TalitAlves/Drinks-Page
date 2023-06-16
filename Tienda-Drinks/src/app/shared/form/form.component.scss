@@ -60,14 +60,15 @@ form {
     gap: 5px;
   }
 
-  .checkbox-container {
+  .radio-container {
     border-radius: 2px;
     margin-bottom: 20px;
-    .checkbox {
+    
+    .radio {
       margin-right: 20px;
     }
 
-    .checkbox-input {
+    .radio-input {
       margin-right: 2px;
     }
   }
