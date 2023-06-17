@@ -4,25 +4,15 @@
    <img [src]="drink.strDrinkThumb" alt="{{drink.strDrink}}"> 
    <h4>{{drink.strDrink}}</h4>
    <p class="type" >{{drink.strAlcoholic}}</p>
-   
-   
-   <button class="primary-btn" (click)="showDetail(drink)" (click)="getIngridients()">Details</button>
-
+    
   
+   <a [routerLink]="['../details', drink.strDrink   ]"  class="primary-btn">See the recipe</a>
+   
     
 </div>
-<div *ngIf="details !== ''" class="details">
-   <h4 *ngIf="ingredients.length > 0">Ingredients:</h4>
-   <ul>
-      <li *ngFor="let i of ingredients">{{i}} </li>
-      <li *ngFor="let m of measures">{{i}}</li>
-      
-   </ul>
+
 
    
-   <h4>Instructions</h4>
-   {{details}}
-
 
 </div>
-</div>
+

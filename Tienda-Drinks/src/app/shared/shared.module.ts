@@ -6,10 +6,12 @@ import { RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
 
 
+
 @NgModule({
   declarations: [
     FormComponent,
     CardComponent,
+    
         
   ],
   imports: [
@@ -21,6 +23,7 @@ import { CardComponent } from './card/card.component';
   exports:[
     FormComponent,
     CardComponent,
+   
       
   ]
 })

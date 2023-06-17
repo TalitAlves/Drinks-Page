@@ -1,11 +1,12 @@
 
 
+
  .container {
     display: flex;
     gap: 20px;
     justify-content: center;
     max-width: 1000px;
-
+   
  }
 
  h4{
@@ -32,13 +33,7 @@
         background-color: #99C7A2;
     }
 
-    .box-favorites{
-        background-color: #99957D;
-    }
-
- 
    
-  
     p{
         font-size: 15px;
         color: white
@@ -50,3 +45,12 @@
         display: block;
         margin: 0 auto
     };
+
+    a{
+        text-decoration: none;
+        transition: all ease-in-out;
+
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    }

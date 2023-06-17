@@ -16,12 +16,14 @@ export class EditDrinkComponent {
 
     this.activetedRoute.params.subscribe((params)=>{
       const idDrink = params['id'];
-      this.comunicatorService.getDrinkDetail(idDrink).subscribe((drink:Drink)=>{
-          this.drink = drink        
+      this.comunicatorService.getDrinkDetaildb(idDrink).subscribe((drink:Drink)=>{
+          this.drink = drink  
+          console.log(drink)  
+            
       })
     })
 
 
   }
 
-}
+} 

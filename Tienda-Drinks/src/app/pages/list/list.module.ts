@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { ListRoutingModule } from './list-routing.module';
 import { ListComponent } from './list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DetailsModule } from '../details/details.module';
+import { DetailsComponent } from '../details/details.component';
 
 
 
@@ -12,13 +14,15 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     ListComponent,
     
+    
   ],
   imports: [
     CommonModule,
     ListRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    DetailsModule
   ],
   exports:[
     ListComponent,
