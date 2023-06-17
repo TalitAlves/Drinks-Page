@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormComponent } from './form/form.component';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
+import { OrderPipe } from './pipe/order.pipe';
 
 
 
@@ -11,6 +12,7 @@ import { CardComponent } from './card/card.component';
   declarations: [
     FormComponent,
     CardComponent,
+    OrderPipe,
     
         
   ],
@@ -23,6 +25,7 @@ import { CardComponent } from './card/card.component';
   exports:[
     FormComponent,
     CardComponent,
+    OrderPipe
    
       
   ]

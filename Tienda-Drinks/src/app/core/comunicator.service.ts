@@ -29,7 +29,7 @@ export class ComunicatorService {
     return this.http.get<Drink[]>(`${this.dbUrl}`);
   }
 
-  public creatDrink(body: Drink): Observable<Drink> {
+  public createDrink(body: Drink): Observable<Drink> {
       return this.http.post<Drink>(this.dbUrl, body);
   }
 

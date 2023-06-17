@@ -1,6 +1,8 @@
-import { ApiResponse } from './../../core/models/drinks.model';
+import { ApiResponse, Criteria } from './../../core/models/drinks.model';
 import { Component, OnInit } from '@angular/core';
 import { ComunicatorService } from 'src/app/core/comunicator.service';
+
+
 
 import { Drink } from 'src/app/core/models/drinks.model';
 
@@ -10,6 +12,8 @@ import { Drink } from 'src/app/core/models/drinks.model';
   styleUrls: ['./my-drinks.component.scss'],
 })
 export class MyDrinksComponent implements OnInit {
+  public criteria?: Criteria;
+
   constructor(private comunicatorService:ComunicatorService) {}
 
   public drinks: Drink[] = [];
@@ -33,6 +37,7 @@ export class MyDrinksComponent implements OnInit {
    
   }
 
+ 
 
   public ngOnInit(): void {
     this.getDrinkDb();

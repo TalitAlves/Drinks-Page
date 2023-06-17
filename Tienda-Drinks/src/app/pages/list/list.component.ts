@@ -21,6 +21,8 @@ export class ListComponent implements OnInit {
       });
   }
 
+  
+
   public ngOnInit(): void {  
     this.getDrinks();
   }

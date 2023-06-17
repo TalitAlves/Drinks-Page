@@ -1,5 +1,5 @@
 
-  <form *ngIf="formDrink" [formGroup]="formDrink" (submit)="creatDrink()">
+  <form *ngIf="formDrink" [formGroup]="formDrink" (submit)="saveDrink()">
     <h3>{{drink ? "Edit Drink" : "New Drink"}}</h3>
     <div class="form-header">
       <input
@@ -113,15 +113,17 @@
         type="radio"
         class="radio-input"
         value="Alcoholic"
-        formControlName="strAlcoholic"
+        formControlName="strAlcoholicYes"
+        name="alcoholicOption"
       />
       <label class="radio" for="Alcoholic">Alcoholic</label>
 
       <input
         type="radio"
         class="radio-input"
-        formControlName="strAlcoholic"
+        formControlName="strAlcoholicNo"
         value="NoAlcoholic"
+        name="alcoholicOption"
       />
       <label for="" class="radio" for="NoAlcoholic">No Alcoholic</label>
     </div>
@@ -135,7 +137,7 @@
     >
       Choose an option
     </p>
-    <button class="primary-btn form-btn">{{drink? "Edit" : "Create"}}</button>
+    <button class="primary-btn form-btn">{{drink? "Save" : "Create"}}</button>
   </form>
   
 

@@ -1,5 +1,6 @@
 import { ApiResponse } from './../../core/models/drinks.model';
 import { Component, Input } from '@angular/core';
+import { ComunicatorService } from 'src/app/core/comunicator.service';
 import { Drink } from 'src/app/core/models/drinks.model';
 
 @Component({
@@ -8,14 +9,19 @@ import { Drink } from 'src/app/core/models/drinks.model';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
+
+  constructor(private service:ComunicatorService){}
+
   @Input() drink?:Drink
 
-
+  public drinks: Drink[] = [];
   public showDetails: boolean = false;
   public details:string = ''
+  public basicImage:string = "assets/cocktail_time.jpg"
   
   public ingredients: string[]  = []
   public measures: string[]  = []
+
 
 
    public getIngridients(){
@@ -50,4 +56,21 @@ public showDetail(drink: Drink){
   }
   
 } 
+public getDrinkDb() {
+  this.service
+    .getDrinkDb()
+    .subscribe((drink:Drink[]) => {
+        this.drinks = drink
+        console.log(this.drinks)
+     
+    });
+}
+
+public deleteDrink(drink:Drink){
+  
+  this.service.deleteDrink(drink.id).subscribe(()=>{
+    this.getDrinkDb()
+  })
+ 
+}
 }

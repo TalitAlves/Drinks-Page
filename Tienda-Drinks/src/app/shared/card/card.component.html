@@ -1,12 +1,25 @@
 
 <div *ngIf="drink" class="drinks">
 <div class="drink-container"> 
-   <img [src]="drink.strDrinkThumb" alt="{{drink.strDrink}}"> 
+   <img
+   src="{{ drink.strDrinkThumb ? drink.strDrinkThumb : basicImage }}"
+   alt="{{ drink.strDrink }}">
+
+
    <h4>{{drink.strDrink}}</h4>
    <p class="type" >{{drink.strAlcoholic}}</p>
     
   
    <a [routerLink]="['../details', drink.strDrink   ]"  class="primary-btn">See the recipe</a>
+
+   
+   <div class="container-btn"  *ngIf="drink.ownCreation  != null && drink.ownCreation === 'true'">
+      <button (click)="deleteDrink(drink)" class="primary-btn">Delete</button>
+      <button class="primary-btn">
+        <a [routerLink]="['../edit-drink', drink.id]">Edit</a>
+      </button>
+    </div>
+   
    
     
 </div>
