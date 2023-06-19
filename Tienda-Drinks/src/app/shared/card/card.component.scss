@@ -2,48 +2,65 @@
 .drinks{
     display: flex;
     max-width: 600px;
-    margin-bottom:20px ;
-
-    .details{
-        padding: 5px 10px;
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    }
+    
 }
 .drink-container{
-  
-    border-radius: 5px;
+      border-radius: 5px;
     width: 200px;
-    height: 350px;
+    height: 400px;
     text-align: center;
+    background-color: white;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;   
     .type{
-        margin-bottom: 10px;
+       font-style: italic;
+
         
     }
 
-    .description{
-        text-align: justify;
+    .category{
+        font-style: italic;
     }
-    
+
+      
 
 }
-img{
-    width: 200px;
-    border-radius: 5px;
-    margin: 0 auto;
-    display: block;
-    max-height: 200px;
+
+.container-img{
+    height: 220px;
+   
+   
+    img{
+        width: 150px;
+        border-radius: 5px;
+        margin: 0 auto;
+        display: block;
+        height: 200px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;   
+    }
+
 }
+
 h4{
-    margin: 10px 0 ;
-  
+    
     font-weight: 800;
+    margin-top: 5px;
   
-}
-a{
-    text-decoration: none;
-    padding: 10px;
-    
-    
 }
 
+
+
+.container-btn{
+    display: flex;
+    gap:10px;
+    justify-content:center ;  
+  
+    .primary-btn{
+      min-width: 80px;
+    }
+  
+    a{
+      text-decoration: none;
+      color:white
+    }
+  }
+  

@@ -1,37 +1,29 @@
-
 <div class="container">
-  <a [routerLink]="['/list']" >
-<div class="box-info box-finder" >
-  <img src="/assets/finder.jpg" alt="finder"/>
-  <h4>Find your favorite drinks! </h4>
+  <div  class="container-btn"> 
+  <button class="finder">
+    <a [routerLink]="['/list']">
+      Drink Finder
+      <img src="/assets/finder.jpg" alt="finder" />
+    </a>
+
+  </button>
   <p>Simply type the name of the desired drink in the
-  search bar, and within seconds, you'll have access to a list of matching
-  options.</p>
+    search bar, and within seconds, you'll have access to a list of matching
+    options.</p>
 
 </div>
-</a>
 
-<a [routerLink]="['/new-drink']" >
-<div class="box-info box-drinks">
-  <img src="/assets/drinks.jpg" alt="mix drinks">
-  <h4>Create our own drinks</h4> 
- 
-  <p> Unleash your imagination and experiment with
-  different combinations of ingredients to invent a one-of-a-kind beverage that
-  pleases your palate
-</p>
+<div class="container-btn">
+<button class="creation">
+    <a [routerLink]="['/new-drink']">
+      Create our own drink
+      <img src="/assets/drinks.jpg" alt="mix drinks" />
+
+     </a>
+    </button>
+
+    <p>Unleash your imagination and experiment with
+      different combinations of ingredients to invent a one-of-a-kind beverage that
+      pleases your palate</p>
 </div>
-</a>
-
-
-<!-- <div class="box-info box-favorites">
-  <img src="/assets/favorites.jpg" alt="cocktail hall of fame">
-    <h4>Mark your favorite drinks</h4>
-    
-  <p> With just one click, add any beverage to
-  your favorites list for easy access later on. T have have a
-  quick selection of the drinks you love the most.
-</p>
-</div> -->
-
 </div>

@@ -1,28 +1,18 @@
-
-.header{
-    width: 100%;
-    background: rgb(14, 65, 14);
-    padding:10px;
-    margin-bottom: 20px;
-    
-
-}
-h1{
-    text-align: center;
-    color: #ECF8F9;
-    font-weight: 700;
-
+.container{
+    background-color: rgba(209, 66, 66, 0.559);
 }
 
 input{
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 10px;
     padding: 10px;
 }
 
 .drinks{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px
+    gap: 10px;
+    padding: 10px
 }
 

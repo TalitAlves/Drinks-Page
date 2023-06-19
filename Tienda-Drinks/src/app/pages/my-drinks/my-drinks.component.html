@@ -12,26 +12,7 @@
   <div *ngFor="let drink of drinks | order: criteria" class="drinks">
 
    <app-card [drink]="drink"></app-card>
-    <!-- <div class="drink-info">
-      <div class="container-img">
-        <img
-          src="{{ drink.strDrinkThumb ? drink.strDrinkThumb : basicImage }}"
-          alt="{{ drink.strDrink }}"
-        />
-      </div>
-      <h4>{{ drink.strDrink }}</h4>
-      <p class="type">
-        {{ drink.strAlcoholic ? "Alcoholic" : "Non alcoholic" }}
-      </p>
-
-      <div class="container-btn">
-        <button (click)="deleteDrink(drink)" class="primary-btn">Delete</button>
-        <button class="primary-btn">
-          <a [routerLink]="['../edit-drink', drink.id]">Edit</a>
-        </button>
-      </div>
-    </div> -->
-
+    
     <div class="details">
       <h4>Ingredients:</h4>
       <ul>
