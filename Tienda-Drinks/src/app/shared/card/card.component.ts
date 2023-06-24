@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComunicatorService } from 'src/app/core/comunicator.service';
 import { Drink } from 'src/app/core/models/drinks.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-card',
@@ -11,7 +12,7 @@ import { Drink } from 'src/app/core/models/drinks.model';
 })
 export class CardComponent {
 
-  constructor(private service:ComunicatorService, private router:Router){}
+  constructor(private service:ComunicatorService, private router:Router, private local:Location){}
 
   @Input() drink?:Drink
 
@@ -70,7 +71,7 @@ public deleteDrink(drink:Drink){
   
   this.service.deleteDrink(drink.id).subscribe(()=>{
     this.getDrinkDb()
-    this.router.navigateByUrl('new-drink');
+    window.location.reload();
   })
  
 }
