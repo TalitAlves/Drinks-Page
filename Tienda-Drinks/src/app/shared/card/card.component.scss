@@ -1,0 +1,87 @@
+.drinks {
+  display: flex;
+  max-width: 600px;
+}
+.drink-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  width: 275px;
+  height: 380px;
+  text-align: center;
+  background-color: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    overflow-wrap: break-word;
+  .type {
+    font-style: italic;
+  }
+
+  .category {
+    font-style: italic;
+  }
+  
+}
+
+.container-img {
+  height: 220px;
+
+  img {
+    width: 150px;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: block;
+    height: 200px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+}
+
+h4 {
+  font-weight: 800;
+}
+
+.container-btn {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-direction: column;
+
+  .primary-btn {
+    min-width: 80px;
+  }
+
+  .second-btn {
+    min-width: 80px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    
+  }
+
+  .edit-delete {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .recipe {
+    display: block;
+  }
+
+  .details {
+    padding: 35px 60px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    height: 380px;
+    border-radius: 3px;
+    min-width: 250px;
+    overflow-wrap: break-word;
+
+    ul{
+      list-style-type: none;
+    }
+  }
+}

@@ -28,6 +28,10 @@ form {
     &.name {
       width: 500px;
     }
+
+   
+
+    
   }
   .form-btn {
     width: 450px;
@@ -42,11 +46,7 @@ form {
     border-bottom: 1px solid rgb(159, 157, 157);
   }
 
-  .label {
-    display: block;
-
-    margin-top: 5px;
-  }
+  
 
   img {
     display: block;
@@ -60,22 +60,20 @@ form {
     gap: 5px;
   }
 
-  .checkbox-container {
+  .radio-container {
     border-radius: 2px;
     margin-bottom: 20px;
-    .checkbox {
+    
+    .radio {
       margin-right: 20px;
     }
 
-    .checkbox-input {
+    .radio-input {
       margin-right: 2px;
     }
   }
 
-  h4 {
-    margin-top: 10px;
-  }
-
+ 
   .error {
     color: red;
     font-size: 12px;
@@ -83,17 +81,29 @@ form {
   }
 }
 
-.text {
-  max-width: 600px;
-  flex-grow: 2;
+.container-input{
+  display: flex;
+  gap:10px;
 
-  margin-right: 40px;
-  display: block;
-  margin: 0 auto;
-
-  h2 {
-    // color: rgb(255, 254, 254);
-    font-size: 65px;
-    font-weight: 900;
-  }
+  .quantity{
+    width: 100px;
+    border: none;
+    border-bottom: 1px solid rgb(159, 157, 157);
+    margin-bottom: 20px;
+   }
 }
+
+.label {
+  display: block;
+  margin-top: 5px;
+
+}
+
+.buttons{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+

@@ -4,6 +4,7 @@ export interface ApiResponse {
   
   export interface Drink {
     id: string
+    ownCreation?: string 
     strDrink: string
     strDrinkAlternate: string | null
     strTags?: string
@@ -23,18 +24,18 @@ export interface ApiResponse {
     strIngredient1: string
     strIngredient2: string
     strIngredient3: string
-    strIngredient4?: string
+    strIngredient4?: string 
     strIngredient5?: string
     strIngredient6?: string
     strIngredient7?: string
-    strIngredient8: string | null
-    strIngredient9: string | null
-    strIngredient10: string | null
-    strIngredient11: string | null
-    strIngredient12: string | null
-    strIngredient13: string | null
-    strIngredient14: string | null
-    strIngredient15: string | null
+    strIngredient8?: string | null
+    strIngredient9?: string | null
+    strIngredient10?: string | null
+    strIngredient11?: string | null
+    strIngredient12?: string | null
+    strIngredient13?: string | null
+    strIngredient14?: string | null
+    strIngredient15?: string | null
     strMeasure1: string
     strMeasure2: string
     strMeasure3: string
@@ -54,28 +55,12 @@ export interface ApiResponse {
     strImageAttribution?: string
     strCreativeCommonsConfirmed: string
     dateModified?: string
-  }
-  
-  
-  
-  export interface DrinkTransformedI {
-    id: string
-    strDrink: string
-    strAlcoholic: string
-    strInstructions: string
-    strInstructionsES: string | null
-    strInstructionsDE?: string
-    strDrinkThumb: string
-    strIngredient1: string
-    strIngredient2: string
-    strIngredient3: string
-    strIngredient4?: string| null
-    strIngredient5?: string| null
-    strIngredient6?: string| null
-    strIngredient7?: string| null
-    strIngredient8: string | null
    
   }
+   
+ 
+  export type Criteria = 'Asc' | 'Desc' | undefined
+
 
 
   

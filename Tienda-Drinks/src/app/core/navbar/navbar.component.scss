@@ -1,14 +1,25 @@
+
+
 .navbar-custom {
-    background-color: #EBF0C2;
-    color:#E55807
+    background-color:#EB5E28;
+    color:white;
+   
+}
+
+.container-fluid> .navbar-brand{
+  font-size: 35px;
+  margin-right: 20px;
 }
 
 .navbar-nav  >a{
-    color: #7E1717;
+    color: white;
+    text-decoration: underline;
+    padding-bottom: 5px;
+
   }
 
   .container-fluid >a {
-    color: #7E1717;
+    color: white;
     font-weight: 700;
 }
   

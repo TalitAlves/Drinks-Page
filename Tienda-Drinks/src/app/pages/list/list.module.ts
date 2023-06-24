@@ -4,26 +4,29 @@ import { CommonModule } from '@angular/common';
 
 import { ListRoutingModule } from './list-routing.module';
 import { ListComponent } from './list.component';
-import { CardComponent } from './card/card.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DetailsModule } from '../details/details.module';
+import { DetailsComponent } from '../details/details.component';
 
 
 
 @NgModule({
   declarations: [
     ListComponent,
-    CardComponent
+    
+    
   ],
   imports: [
     CommonModule,
     ListRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    DetailsModule
   ],
   exports:[
     ListComponent,
-    CardComponent
+
   ]
 })
 export class ListModule { }

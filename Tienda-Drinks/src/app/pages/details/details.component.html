@@ -1,0 +1,45 @@
+<div *ngIf="drink" class="container">
+  <div class="header">
+    <h1>{{ drink.strDrink }}</h1>
+    <h2>{{ drink.strCategory }}</h2>
+  </div>
+
+  <div class="drink">
+    <div class="container-1">
+      <div class="details">
+        <h3>RECIPE</h3>
+
+        <ul>
+          <li *ngFor="let ingredient of ingredients; let i = index">
+            <div class="ingredient">{{ ingredient }}</div>
+            <div class="measure">{{ measures[i] }}</div>
+          </li>
+        </ul>
+
+        <h3>INSTRUCTIONS</h3>
+        <div>
+          {{ drink.strInstructions }}
+        </div>
+      </div>
+    </div>
+    
+    <div class="image-container">
+     
+        <img [src]="drink.strDrinkThumb" alt="{{ drink.strDrinkThumb }}" />
+        <!-- <div class="overlay">
+            <h3>Best glass to enjoy your drink:</h3>
+            <img src="/assets/cocktail-glass.jpg" alt="">
+          </div> -->
+     
+    </div>
+
+
+  </div>
+  <button class="primary-btn" [routerLink]="['/list']">
+    >>Go back to Drinks
+  </button>
+</div>
+
+<div class="image-container">
+  <div class="image"></div>
+</div>

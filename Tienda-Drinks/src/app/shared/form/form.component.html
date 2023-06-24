@@ -1,143 +1,196 @@
+<form *ngIf="formDrink" [formGroup]="formDrink" (submit)="saveDrink()">
 
-  <form *ngIf="formDrink" [formGroup]="formDrink" (submit)="creatDrink()">
-    <h3>{{drink ? "Edit Drink" : "New Drink"}}</h3>
-    <div class="form-header">
-      <input
-        class="line-input name"
-        type="text"
-        formControlName="strDrink"
-        placeholder="Set a name"
-      />
-      <p
-        class="error"
-        *ngIf="
-          !formDrink.get('strDrink')?.valid &&
-          (formDrink.get('strDrink')?.dirty ||
-            formDrink.get('strDrink')?.touched)
-        "
-      >
-        Drink name Required
-      </p>
+  <h3>{{ drink ? "Edit Drink" : "New Drink" }}</h3>
+  <div class="form-header">
+    <input
+      class="line-input name"
+      type="text"
+      formControlName="strDrink"
+      placeholder="Set a name"
+     
+      maxlength="30"
+    />
+    <p
+      class="error"
+      *ngIf="
+        !formDrink.get('strDrink')?.valid &&
+        (formDrink.get('strDrink')?.dirty || formDrink.get('strDrink')?.touched)
+      "
+    >
+      Drink name Required
+    </p>
 
-      <input
-        class="line-input image"
-        type="text"
-        formControlName="strDrinkThumb"
-        placeholder="Set the image Url"
-      />
-      <img [src]="previewImg" alt="" />
-    </div>
+    <input
+      class="line-input image"
+      type="text"
+      formControlName="strDrinkThumb"
+      placeholder="Set the image Url"
+    />
+    <img [src]="previewImg" alt="" />
+  </div>
 
-    <label class="label" for="">Ingredients</label>
-    <div class="ingredients">
-      <input
-        type="text"
-        class="line-input"
-        formControlName="strIngredient1"
-        placeholder="Ingredient 1"
-      />
-      <p
-        class="error"
-        *ngIf="
-          !formDrink.get('strIngredient1')?.valid &&
-          (formDrink.get('strIngredient1')?.dirty ||
-            formDrink.get('strIngredient1')?.touched)
-        "
-      >
-        at least 2 ingredients required
-      </p>
-      <input
-        type="text"
-        class="line-input"
-        formControlName="strIngredient2"
-        placeholder="Ingredient 2"
-      />
-      <p
-        class="error"
-        *ngIf="
-          !formDrink.get('strIngredient2')?.valid &&
-          (formDrink.get('strIngredient2')?.dirty ||
-            formDrink.get('strIngredient2')?.touched)
-        "
-      >
-        at least 2 ingredients required
-      </p>
+  <label class="label" for="">Ingredients</label>
+  <div class="ingredients">
+    <div class="container-input">
+          <input
+            type="text"
+            class="line-input"
+            formControlName="strIngredient1"
+            placeholder="Ingredient 1"
+            maxlength="20"
+          />
+          <p
+            class="error"
+            *ngIf="
+              !formDrink.get('strIngredient1')?.valid &&
+              (formDrink.get('strIngredient1')?.dirty ||
+                formDrink.get('strIngredient1')?.touched)
+            "
+          >
+            at least 2 ingredients required
+          </p>
+          <input
+            class="quantity"
+            type="text"
+            placeholder="quantity"
+             formControlName="strMeasure1"
+             maxlength="10"
+          />
+        </div>
+
+            
+          <div class="container-input">
+            <input
+              type="text"
+              class="line-input"
+              formControlName="strIngredient2"
+              placeholder="Ingredient 2"
+              maxlength="20"
+            />
+            <p
+              class="error"
+              *ngIf="
+                !formDrink.get('strIngredient2')?.valid &&
+                (formDrink.get('strIngredient2')?.dirty ||
+                  formDrink.get('strIngredient2')?.touched)
+              "
+            >
+              at least 2 ingredients required
+            </p>
+            <input
+            class="quantity"
+            type="text"
+            placeholder="quantity"
+            formControlName="strMeasure2"
+            maxlength="10"
+          />
+          </div>
+
+         
+
+    
+    <div class="container-input" *ngIf="countIngredient>=3 || (drink && formDrink.get('strIngredient3')?.value )">
       <input
         type="text"
         class="line-input"
         formControlName="strIngredient3"
         placeholder="Ingredient 3"
+        maxlength="20"
       />
-      <input
-        type="text"
-        class="line-input"
-        formControlName="strIngredient4"
-        placeholder="Ingredient 4"
-      />
-      <input
-        type="text"
-        class="line-input"
-        formControlName="strIngredient5"
-        placeholder="Ingredient 5"
-      />
-      <input
-        type="text"
-        class="line-input"
-        formControlName="strIngredient6"
-        placeholder="Ingredient 6"
-      />
-    </div>
-
-    <label class="label" for="">Instructions</label>
-    <textarea
-      cols="30"
-      rows="5"
-      placeholder="Set the instructions"
-      formControlName="strInstructions"
-    ></textarea>
-    <p
-      class="error"
-      *ngIf="
-        !formDrink.get('strInstructions')?.valid &&
-        (formDrink.get('strInstructions')?.dirty ||
-          formDrink.get('strInstructions')?.touched)
-      "
-    >
-      Text must be at least 5 characters long
-    </p>
-
+      <input  class="quantity" type="text" placeholder="quantity"   formControlName="strMeasure3"   maxlength="10">
    
-    <div class="checkbox-container">
-      <label class="label">Alcoholic?</label>
-      <input
-        type="checkbox"
-        class="checkbox-input"
-        [(ngModel)]="isChecked1"
-        (change)="toggleCheckbox(1)"
-        formControlName="strAlcoholic"
-      />
-      <label class="checkbox yes">Yes</label>
-
-      <input
-        type="checkbox"
-        class="checkbox-input"
-        [(ngModel)]="isChecked2"
-        (change)="toggleCheckbox(2)"
-        formControlName="strAlcoholic"
-      />
-      <label for="" class="checkbox">No</label>
     </div>
-    <p
-      class="error"
-      *ngIf="
-        !formDrink.get('strAlcoholic')?.valid &&
-        (formDrink.get('strAlcoholic')?.dirty ||
-          formDrink.get('strAlcoholic')?.touched)
-      "
-    >
-      Choose an option
-    </p>
-    <button class="primary-btn form-btn">{{drink? "Edit" : "Create"}}</button>
-  </form>
-  
 
+    <div class="container-input" *ngIf="countIngredient>=4 || (drink && formDrink.get('strIngredient4')?.value )">
+    <input
+      type="text"
+      class="line-input"
+      formControlName="strIngredient4"
+      placeholder="Ingredient 4"
+      maxlength="20"
+    />
+    <input  class=" quantity" type="text" placeholder="quantity"  formControlName="strMeasure4"   maxlength="10">
+  </div>
+
+  <div class="container-input" *ngIf="countIngredient>=5 || (drink && formDrink.get('strIngredient5')?.value )">
+    <input
+      type="text"
+      class="line-input"
+      formControlName="strIngredient5"
+      placeholder="Ingredient 5"
+      maxlength="20"
+    />
+    <input  class="quantity" type="text" placeholder="quantity"  formControlName="strMeasure5"   maxlength="10">
+    
+  </div>
+
+    <div class="container-input" *ngIf="countIngredient>=6 || (drink && formDrink.get('strIngredient6')?.value )">
+    <input
+      type="text"
+      class="line-input"
+      formControlName="strIngredient6"
+      placeholder="Ingredient 6"
+      maxlength="20"
+    />
+    <input  class="quantity" type="text" placeholder="quantity"  formControlName="strMeasure6"   maxlength="10">
+  </div>
+
+</div>
+
+<div class="buttons">
+<button class="primary-btn" (click)="addIngredients($event)">Add ingredient</button>
+
+</div>
+
+
+  <label class="label" for="">Instructions</label>
+  <textarea
+    cols="30"
+    rows="5"
+    placeholder="Set the instructions"
+    formControlName="strInstructions"
+    maxlength="50"
+  ></textarea>
+  <p
+    class="error"
+    *ngIf="
+      !formDrink.get('strInstructions')?.valid &&
+      (formDrink.get('strInstructions')?.dirty ||
+        formDrink.get('strInstructions')?.touched)
+    "
+  >
+    Text must be at least 5 characters long
+  </p>
+
+  <div class="radio-container">
+    <label class="label">Alcoholic?</label>
+    <input
+      type="radio"
+      class="radio-input"
+      value="Alcoholic"
+      formControlName="strAlcoholicYes"
+      name="strAlcoholic"
+    />
+    <label class="radio" for="strAlcoholic">Alcoholic</label>
+
+    <input
+      type="radio"
+      class="radio-input"
+      formControlName="strAlcoholicNo"
+      value="NoAlcoholic"
+      name="strAlcoholic"
+    />
+    <label class="radio" for="strAlcoholic">No Alcoholic</label>
+  </div>
+  <p
+    class="error"
+    *ngIf="
+      !formDrink.get('strAlcoholic')?.valid &&
+      (formDrink.get('strAlcoholic')?.dirty ||
+        formDrink.get('strAlcoholic')?.touched)
+    "
+  >
+    Choose an option
+  </p>
+  <button class="primary-btn form-btn">Save</button>
+</form>

@@ -10,10 +10,17 @@ export class ComunicatorService {
   public base_url: string =
     'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
   
+    public detail_url:string = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
+
+  
   constructor(private http: HttpClient) {}
 
   public getDrink(drinkName: string): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(`${this.base_url}${drinkName}`);
+    
+  }
+  public getDrinkDetail(id:string):Observable<Drink>{
+    return this.http.get<Drink>(`${this.base_url}/${id}`)
   }
 
   public dbUrl: string = 'http://localhost:3000/drinks';
@@ -22,7 +29,7 @@ export class ComunicatorService {
     return this.http.get<Drink[]>(`${this.dbUrl}`);
   }
 
-  public creatDrink(body: Drink): Observable<Drink> {
+  public createDrink(body: Drink): Observable<Drink> {
       return this.http.post<Drink>(this.dbUrl, body);
   }
 
@@ -31,7 +38,7 @@ export class ComunicatorService {
 
   }
 
-  public getDrinkDetail(id:string):Observable<Drink>{
+  public getDrinkDetaildb(id:string):Observable<Drink>{
     return this.http.get<Drink>(`${this.dbUrl}/${id}`)
   }
 

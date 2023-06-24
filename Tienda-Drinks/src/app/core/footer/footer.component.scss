@@ -1,0 +1,28 @@
+
+div{
+    font-size: 14px;
+    margin: 2px;
+    text-align: center;
+    color:darkslategrey;
+
+    a{
+        text-decoration: none;
+
+       
+    }
+}
+
+.container-logo{
+    display: flex;
+    gap:30px;
+    justify-content: center;
+   
+    img{
+        width: 30px;
+        border-radius: 50%;
+
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+    }
+}

@@ -1,52 +1,72 @@
+.container{
+  display: flex;
+  gap:20px;
+  justify-content: center;
+}
 
-
- .container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    max-width: 1000px;
-
- }
-
- h4{
-    text-align: center;
-    font-weight: 900;
-    color: white
- }
-   
- 
- .box-info{
-    max-width: 300px;
-    height: 320px;
-    border-radius: 5px;
-    padding: 10px;
-    
- }
-
-     .box-finder{
-        background-color: #A4579F;
-     
-    }
-
-    .box-drinks{
-        background-color: #99C7A2;
-    }
-
-    .box-favorites{
-        background-color: #99957D;
-    }
-
- 
-   
+.img-logo {
+  width: 100px;
   
-    p{
-        font-size: 15px;
-        color: white
-       
-    }
+  margin: 0 auto;
+}
 
-    img{
-        width: 150px;
-        display: block;
-        margin: 0 auto
-    };
+a {
+  text-decoration: none;
+  transition: all ease-in-out;
+  color: white;
+}
+
+
+
+  p {
+    padding: 5px;
+       color: white;
+    
+   
+    
+  }
+
+
+.logo{
+  width: 80%;
+}
+
+
+.finder{
+  background-color: #a4579f;
+ 
+  
+
+  }
+
+.box{
+
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 200px;
+ text-align: center;
+ height: 350px;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ border-radius: 5px;
+}
+  .creation {
+    background-color: #99c7a2;
+   
+ 
+  }
+button {
+  width: 150px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+ 
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  
+
+ 
+}

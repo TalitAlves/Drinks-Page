@@ -3,13 +3,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormComponent } from './form/form.component';
 import { RouterModule } from '@angular/router';
+import { CardComponent } from './card/card.component';
+import { OrderPipe } from './pipe/order.pipe';
+
 
 
 @NgModule({
   declarations: [
     FormComponent,
+    CardComponent,
+    OrderPipe,
     
-    
+        
   ],
   imports: [
     CommonModule,
@@ -19,6 +24,9 @@ import { RouterModule } from '@angular/router';
   ],
   exports:[
     FormComponent,
+    CardComponent,
+    OrderPipe
+   
       
   ]
 })

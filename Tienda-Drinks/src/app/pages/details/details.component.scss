@@ -1,0 +1,86 @@
+.container {
+  border: 1px solid #7e1717;
+  margin-top: 20px;
+  padding: 0 20px 30px;
+  max-width: 850px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+}
+.drink {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+  margin-top: 0;
+}
+
+h2 {
+  text-align: center;
+  font-family: Cambria, Georgia, serif;
+  font-style: italic;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.details {
+  background-color: #f1f1f3;
+  padding: 20px;
+  max-width: 485px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+   
+}
+
+li {
+  .ingredient {
+    font-weight: bold;
+  }
+
+  .measure {
+    margin-left: 20px;
+    font-family: Cambria, Georgia, serif;
+    font-style: italic;
+  }
+}
+
+
+img {
+  
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    max-width: 400px;
+}
+ 
+
+
+button {
+  margin: 0 auto;
+  display: block;
+}
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+
+
+img {
+  transition: transform 0.3s ease;
+  width: 300px;
+}
+
+img:hover {
+  transform: scale(1.1); /* Ajuste o valor para aumentar ou diminuir a ampliação */
+}
+
+}
+
