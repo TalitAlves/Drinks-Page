@@ -1,5 +1,5 @@
 .primary-btn{
-    color:$primary-color;
+    color:white;
     background-color:$detail-color;
     border: none;
     border-radius: 5px;
@@ -7,7 +7,7 @@
     transition: all ease-in-out;
 
     &:hover{
-        background-color:#b24709 ;
+        background-color:#58258f ;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     }
 }
