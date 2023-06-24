@@ -1,4 +1,4 @@
-<div> Order:
+<div class="order"> Order:
    
    <select [(ngModel)]="criteria">
    <option  value="Asc">A > Z </option>
@@ -13,18 +13,6 @@
 
    <app-card [drink]="drink"></app-card>
     
-    <div class="details">
-      <h4>Ingredients:</h4>
-      <ul>
-        <li>{{ drink.strIngredient1 }}</li>
-        <li>{{ drink.strIngredient2 }}</li>
-        <li *ngIf="drink.strIngredient3">{{ drink.strIngredient3 }}</li>
-        <li *ngIf="drink.strIngredient4">{{ drink.strIngredient4 }}</li>
-        <li *ngIf="drink.strIngredient5">{{ drink.strIngredient5 }}</li>
-        <li *ngIf="drink.strIngredient6">{{ drink.strIngredient6 }}</li>
-      </ul>
-      <h4>Instructions</h4>
-      <p>{{ drink.strInstructions }}</p>
-    </div>
+    
   </div>
 </div>

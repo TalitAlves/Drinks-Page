@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NewDrinkComponent } from './new-drink.component';
+import { exitFormGuard } from 'src/app/core/guards/exit-form.guard';
+
 
 const routes: Routes = [{
   path:'',
   pathMatch:'full',
-  component: NewDrinkComponent
+  component: NewDrinkComponent,
+  canDeactivate: [exitFormGuard]
+
 
 }];
 

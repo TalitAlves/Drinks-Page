@@ -5,6 +5,8 @@ import { NewDrinkModule } from 'src/app/pages/new-drink/new-drink.module';
 import { MyDrinksModule } from 'src/app/pages/my-drinks/my-drinks.module';
 import { EditDrinkModule } from 'src/app/pages/edit-drink/edit-drink.module';
 import { DetailsModule } from './pages/details/details.module';
+import { drinksResolver } from './core/resolvers/drinks.resolver';
+
 
 
 const routes: Routes = [{
@@ -21,11 +23,10 @@ const routes: Routes = [{
 {
   path:'list',
   pathMatch: 'prefix',
-  loadChildren:()=> import('src/app/pages/list/list.module').then(m=>ListModule)
+   loadChildren:()=> import('src/app/pages/list/list.module').then(m=>ListModule)
 },
 {
   path: "new-drink",
-  pathMatch:'prefix',
   loadChildren:()=> import('src/app/pages/new-drink/new-drink.module').then(m=>NewDrinkModule)
 },
 

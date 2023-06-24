@@ -9,7 +9,10 @@ import { Component } from '@angular/core';
 })
 export class NewDrinkComponent  {
 
- 
+ public isDirty: boolean = false
+ public setFormAsDirty(){
+  this.isDirty = true
+ }
 
 
 }

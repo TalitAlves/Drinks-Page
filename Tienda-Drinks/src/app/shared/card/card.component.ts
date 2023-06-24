@@ -1,5 +1,6 @@
 import { ApiResponse } from './../../core/models/drinks.model';
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ComunicatorService } from 'src/app/core/comunicator.service';
 import { Drink } from 'src/app/core/models/drinks.model';
 
@@ -10,7 +11,7 @@ import { Drink } from 'src/app/core/models/drinks.model';
 })
 export class CardComponent {
 
-  constructor(private service:ComunicatorService){}
+  constructor(private service:ComunicatorService, private router:Router){}
 
   @Input() drink?:Drink
 
@@ -61,8 +62,7 @@ public getDrinkDb() {
     .getDrinkDb()
     .subscribe((drink:Drink[]) => {
         this.drinks = drink
-        console.log(this.drinks)
-     
+        
     });
 }
 
@@ -70,7 +70,11 @@ public deleteDrink(drink:Drink){
   
   this.service.deleteDrink(drink.id).subscribe(()=>{
     this.getDrinkDb()
+    this.router.navigateByUrl('new-drink');
   })
  
 }
+
+
+
 }

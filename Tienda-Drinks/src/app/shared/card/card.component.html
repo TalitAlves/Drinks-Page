@@ -2,8 +2,9 @@
   <div class="drink-container">
 
     <h4>{{ drink.strDrink }}</h4>
-    <p class="category" ngIf="drink.ownCreation !=='true'">{{drink.strCategory}}</p>
-
+    <div *ngIf="drink.ownCreation !=='true'">
+    <p class="category">{{drink.strCategory}}</p>
+  </div>
     <div class="container-img">
     <img
       src="{{ drink.strDrinkThumb ? drink.strDrinkThumb : basicImage }}"
@@ -23,9 +24,46 @@
       class="container-btn"
       *ngIf="drink.ownCreation != null && drink.ownCreation === 'true'"
     >
-      <button (click)="deleteDrink(drink)" class="primary-btn">Delete</button>
-      <a [routerLink]="['../edit-drink', drink.id]" class="primary-btn">Edit</a>
+    <div class="recipe" (click)="showDetail(drink)"> 
+      <button class="primary-btn">See the Recipe</button>
+    </div>  
+    <div class="edit-delete">
+      <button (click)="deleteDrink(drink)" class="second-btn">Delete</button>
+      <button class="second-btn"><a [routerLink]="['../edit-drink', drink.id]">Edit</a></button>
+    </div>
+      
       
     </div>
+
+
+
+    
   </div>
+
+  <div class="details drink-container" *ngIf="showDetails">
+    <h4>Ingredients:</h4>
+    <ul class="list">
+      <li>{{ drink.strIngredient1 }}{{drink.strMeasure1 ? ":" : ""}}
+       <div class="measures"  *ngIf="drink.strMeasure1">{{ drink.strMeasure1 }}</div>
+      </li>
+      <li>{{ drink.strIngredient2 }}{{drink.strMeasure2 ? ":" : ""}}
+        <div class="measures"  *ngIf="drink.strMeasure2">{{ drink.strMeasure2 }}</div>
+      </li>
+      <li *ngIf="drink.strIngredient3">{{ drink.strIngredient3 }} {{drink.strMeasure3 ? ":" : ""}}
+        <div class="measures"  *ngIf="drink.strMeasure3">{{ drink.strMeasure3 }}</div>
+      </li>
+      <li *ngIf="drink.strIngredient4">{{ drink.strIngredient4 }}{{drink.strMeasure4 ? ":" : ""}}
+        <div class="measures"  *ngIf="drink.strMeasure4">{{ drink.strMeasure4 }}</div>
+      </li>
+      <li *ngIf="drink.strIngredient5">{{ drink.strIngredient5 }}{{drink.strMeasure5 ? ":" : ""}}
+        <div class="measures"  *ngIf="drink.strMeasure5">{{ drink.strMeasure15}}</div>
+      </li>
+      <li *ngIf="drink.strIngredient6">{{ drink.strIngredient6 }}{{drink.strMeasure6 ? ":" : ""}}
+        <div class="measures"  *ngIf="drink.strMeasure6">{{ drink.strMeasure6 }}</div>
+      </li>
+    </ul>
+    <h4>Instructions</h4>
+    <p>{{ drink.strInstructions }}</p>
+  </div>
+  
 </div>
