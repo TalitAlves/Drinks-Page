@@ -1,9 +1,10 @@
-import { ApiResponse } from './../../core/models/drinks.model';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComunicatorService } from 'src/app/core/comunicator.service';
 import { Drink } from 'src/app/core/models/drinks.model';
 import { Location } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/pages/dialog/dialog.component';
 
 @Component({
   selector: 'app-card',
@@ -12,7 +13,8 @@ import { Location } from '@angular/common';
 })
 export class CardComponent {
 
-  constructor(private service:ComunicatorService, private router:Router, private local:Location){}
+  constructor(private service:ComunicatorService, private router:Router, private local:Location, 
+    public dialog: MatDialog){}
 
   @Input() drink?:Drink
 
@@ -44,7 +46,6 @@ export class CardComponent {
     }
   }
   }
-
   
 public showDetail(drink: Drink){
   this.showDetails = !this.showDetails;
@@ -66,6 +67,20 @@ public getDrinkDb() {
         
     });
 }
+
+public openConfirmDialog(drink: Drink): void {
+  const dialogRef = this.dialog.open(DialogComponent, {
+    width: '300px',
+    data: 'Tem certeza que deseja deletar o drink?'
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.deleteDrink(drink);
+    }
+  });
+}
+
 
 public deleteDrink(drink:Drink){
   

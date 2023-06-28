@@ -76,17 +76,14 @@ export class FormComponent {
         this.drink?.strMeasure6 || this.newDrink?.strMeasure6,
         Validators.maxLength(20) ],
 
-
-
-
-      strAlcoholicYes: [
+      strAlcoholic: [
         this.drink?.strAlcoholic || 'Alcoholic',
         this.newDrink?.strAlcoholic,
       ],
-      strAlcoholicNo: [
-        this.drink?.strAlcoholic || 'No alcoholic',
-        this.newDrink?.strAlcoholic,
-      ],
+      // strAlcoholicNo: [
+      //   this.drink?.strAlcoholic || 'No alcoholic',
+      //   this.newDrink?.strAlcoholic,
+      // ],
       strInstructions: [
         this.drink?.strInstructions || this.newDrink?.strInstructions,
         [Validators.required, Validators.minLength(5), Validators.maxLength(50)],

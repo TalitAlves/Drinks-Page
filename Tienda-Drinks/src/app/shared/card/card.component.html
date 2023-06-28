@@ -28,7 +28,7 @@
       <button class="primary-btn">See the Recipe</button>
     </div>  
     <div class="edit-delete">
-      <button (click)="deleteDrink(drink)" class="second-btn">Delete</button>
+      <button (click)="openConfirmDialog(drink)" class="second-btn">Delete</button>
       <button class="second-btn"><a [routerLink]="['../edit-drink', drink.id]">Edit</a></button>
     </div>
       

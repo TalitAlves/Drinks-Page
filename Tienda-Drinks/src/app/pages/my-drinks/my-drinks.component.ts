@@ -1,8 +1,6 @@
 import { ApiResponse, Criteria } from './../../core/models/drinks.model';
 import { Component, Input, OnInit } from '@angular/core';
-
 import { ComunicatorService } from 'src/app/core/comunicator.service';
-
 import { Drink } from 'src/app/core/models/drinks.model';
 
 @Component({
@@ -13,7 +11,7 @@ import { Drink } from 'src/app/core/models/drinks.model';
 export class MyDrinksComponent implements OnInit {
   public criteria?: Criteria;
 
-  constructor(private comunicatorService: ComunicatorService) {}
+  constructor(private comunicatorService: ComunicatorService,) {}
 
   public drinks: Drink[] = [];
   public basicImage: string = 'assets/cocktail_time.jpg';
@@ -25,11 +23,8 @@ export class MyDrinksComponent implements OnInit {
     });
   }
 
-  public deleteDrink(drink: Drink) {
-    this.comunicatorService.deleteDrink(drink.id).subscribe(() => {
-      this.getDrinkDb();
-    });
-  }
+   
+
 
   public ngOnInit(): void {
     this.getDrinkDb();
